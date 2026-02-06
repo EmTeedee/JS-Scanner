@@ -11,7 +11,7 @@ class JsFunctionsScanner implements FunctionsScannerInterface
     protected $validFunctions;
     protected $parser;
 
-    public function __construct(array $validFunctions = null)
+    public function __construct(?array $validFunctions = null)
     {
         $this->validFunctions = $validFunctions;
         $this->parser('latest');
