@@ -26,7 +26,7 @@ class JsFunctionsScanner implements FunctionsScannerInterface
 
     public function scan(string $code, string $filename): array
     {
-        list($version, $options) = $this->parser;
+        [$version, $options] = $this->parser;
 
         $ast = Peast::$version($code, $options)->parse();
 
