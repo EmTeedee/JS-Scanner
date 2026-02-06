@@ -19,7 +19,7 @@ class JsNodeVisitor
         $this->validFunctions = $validFunctions;
     }
 
-    public function __invoke(Node $node)
+    public function __invoke(Node $node): void
     {
         if ($node->getType() === 'CallExpression') {
             $function = $this->createFunction($node);
@@ -109,7 +109,7 @@ class JsNodeVisitor
     {
         $text = $comment->getText();
 
-        $lines = array_map(function ($line) {
+        $lines = array_map(function ($line): string {
             $line = ltrim($line, "#*/ \t");
             $line = rtrim($line, "#*/ \t");
             return trim($line);
